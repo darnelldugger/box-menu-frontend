@@ -1,0 +1,13 @@
+main {
+  display: flex;
+  align-items: center;
+  /* background-color: tan ; */
+}
+
+  .title {
+    padding: 4rem 2rem 0rem 2rem;
+  }
+
+  .tab {
+    padding-top: 4rem;
+  }

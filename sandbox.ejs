@@ -1,0 +1,53 @@
+async function create(post){
+  const res = await axios({
+    url: BASE_URL, 
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'Authorization' : `Bearer ${tokenService.getToken()}`
+    },
+    body: JSON.stringify(post)
+  }) 
+  const data = await res.json()
+  console.log(data)
+  return data
+}
+
+function getAll(){
+  return axios({
+    url: BASE_URL,
+    headers: {
+      'Authorization' : `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
+}
+
+
+{user.profile === postThread.owner?._id ?
+
+  <form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
+    <h4>Have evidence to support your statement? Provide it here!</h4>
+            <div>
+          <input type="text" 
+          name="source"
+          id="source-input"
+          value={formData.evidence?.source}
+          onChange={handleChange}
+          
+          />
+          <br />
+          <textarea
+          type="text" 
+          name="notes"
+          id="notes-input" 
+          cols="30" rows="10"
+          value={formData.evidence?.notes}
+          onChange={handleChange}
+          />
+        </div>
+        <button type="submit">submit</button>
+  </form>
+  :
+  <></>
+}
